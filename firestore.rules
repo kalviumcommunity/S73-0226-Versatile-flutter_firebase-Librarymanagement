@@ -1,0 +1,74 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── Users ──
+    match /users/{userId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // ── Libraries ──
+    match /libraries/{libraryId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null;
+      allow update: if request.auth != null;
+      
+      // ── Books within Libraries (for cross-library search) ──
+      match /books/{bookId} {
+        allow read: if request.auth != null; // Allow all authenticated users to read books for search
+        allow write: if request.auth != null; // Allow authenticated users to manage books
+      }
+      
+      // ── Reservations within Libraries ──
+      match /reservations/{reservationId} {
+        allow read: if request.auth != null;
+        allow write: if request.auth != null;
+      }
+      
+      // ── Borrow Transactions within Libraries ──
+      match /borrow_transactions/{transactionId} {
+        allow read: if request.auth != null;
+        allow write: if request.auth != null;
+      }
+    }
+
+    // ── Library Members ──
+    match /library_members/{docId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    // ── Books (Global collection - if used) ──
+    match /books/{bookId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+
+    // ── Borrows (Global collection - if used) ──
+    match /borrows/{borrowId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+
+    // ── Borrow Transactions (Global collection - if used) ──
+    match /borrow_transactions/{transactionId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+
+    // ── Reservations (Global collection - if used) ──
+    match /reservations/{reservationId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+
+    // ── Access Tokens ──
+    match /access_tokens/{tokenId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+  }
+}

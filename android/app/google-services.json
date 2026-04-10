@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1043576322716",
+    "project_id": "lib-management-d6460",
+    "storage_bucket": "lib-management-d6460.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043576322716:android:d7e9930b71557916938b59",
+        "android_client_info": {
+          "package_name": "com.example.library_management_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043576322716-or5ervgc2fmpfihsrc5pchbohip6h546.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.library_management_app",
+            "certificate_hash": "e91ccf4a5655be134fec2a175f485bbc55a0ce21"
+          }
+        },
+        {
+          "client_id": "1043576322716-pa48klhmptjjlb26ajlbpi4s8h94oajm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjuZD6YIPq5o2GHOBbURfEgGQxDfHVcvg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043576322716-pa48klhmptjjlb26ajlbpi4s8h94oajm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1043576322716-dtidespsfu15qiah562ru894osd1mo7e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.libraryManagementApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
